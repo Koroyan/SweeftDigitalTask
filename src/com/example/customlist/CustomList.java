@@ -72,6 +72,23 @@ public class CustomList<T> {
         return stringBuilder.toString();
     }
 
+    public T get(int index){
+        if(index>=N){
+            try {
+                throw new CustomException(index,N);
+            } catch (CustomException e) {
+                e.printStackTrace();
+            }
+        }
+        Node<T> prev = first;
+        Node<T> iter = first;
+        for(int i=0;i<index;i++){
+            iter=prev.next;
+            prev=iter;
+        }
+        return iter.data;
+    }
+
     public boolean isEmpty(){
         return N == 0;
     }

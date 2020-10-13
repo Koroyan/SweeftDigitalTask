@@ -24,5 +24,6 @@ public class Main {
         customList.remove(2);
         customList.add(1);
         System.out.println(customList.toString());
+        System.out.println(customList.get(3));
     }
 }
